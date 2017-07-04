@@ -1,0 +1,16 @@
+.button {
+  background-color: blue;
+  margin-left: 20px;
+  height: 30px;
+  color: white;
+}
+
+.hsbc-logo {
+  animation: App-logo-spin infinite 5s linear;
+  height: 30px;
+  margin-right: 20px;
+}
+
+.layout {
+  vertical-align: middle;
+}
