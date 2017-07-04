@@ -11,7 +11,7 @@ const SpecialNotification = ({name}) => {
   return (
     <div className="layout">
       <img src={HSBC_logo} className="hsbc-logo" alt="logo" />
-      <i>I am big badass HSBC react component</i>
+      <i>I am a badass HSBC react component</i>
       <button onClick={onClick} className="button"> Click me now! </button>
     </div>
   );
