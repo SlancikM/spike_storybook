@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 
-import SpecialNotification from './components/hsbc-ui/SpecialNotification';
+import BadassComponent from './components/hsbc-ui/BadassComponent';
 
 class App extends Component {
   render() {
@@ -10,7 +10,7 @@ class App extends Component {
         <div className="App-header">
         </div>
         <div className="App-container">
-          <SpecialNotification name="Lilly" />
+          <BadassComponent name="anybody" />
         </div>
       </div>
     );

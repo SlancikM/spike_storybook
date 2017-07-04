@@ -1,8 +1,8 @@
 import React from 'react';
-import './SpecialNotification.css';
+import './BadassComponent.css';
 import HSBC_logo from './HSBC_logo.png';
 
-const SpecialNotification = (props) => {
+const BadassComponent = (props) => {
 
   const { name, actionClick } = props;
 
@@ -18,8 +18,8 @@ const SpecialNotification = (props) => {
   );
 };
 
-SpecialNotification.propTypes = {
+BadassComponent.propTypes = {
   name: React.PropTypes.string
 }
 
-export default SpecialNotification;
+export default BadassComponent;
