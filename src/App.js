@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import BadassComponent from './components/hsbc-ui/BadassComponent';
+import CustomInput from './components/hsbc-ui/CustomInput';
 
 class App extends Component {
   render() {
@@ -11,6 +12,8 @@ class App extends Component {
         </div>
         <div className="App-container">
           <BadassComponent name="anybody" />
+
+          <CustomInput />
         </div>
       </div>
     );
