@@ -12,7 +12,6 @@ class App extends Component {
         </div>
         <div className="App-container">
           <BadassComponent name="anybody" />
-
           <CustomInput />
         </div>
       </div>
