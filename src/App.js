@@ -10,6 +10,7 @@ import { store } from './reducers';
 class App extends Component {
   moveMoney = (values) => {
     console.log(values);
+    alert(`Have a nice day: ${values}`);
   }
   render() {
     return (

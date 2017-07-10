@@ -7,7 +7,7 @@ const AccountNoField = ({ input, label, placeholder, type, meta: { touched, erro
     <div className="item">
       <label>{label}</label>
       <div className="inputWithMessage">
-        <input {...input} placeholder={placeholder} type={type}/>
+        <NumberFormat {...input} placeholder={placeholder} type={type} thousandSeparator={true} decimalPrecision={2} prefix={'£'} />
         {touched && ((error && <span className="errorMessage">{error}</span>) || (warning && <span className="warningMessage">{warning}</span>))}
       </div>
     </div>);

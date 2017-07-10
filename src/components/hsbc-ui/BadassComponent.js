@@ -12,7 +12,6 @@ const BadassComponent = (props) => {
     <div className="layout">
       <img src={HSBC_logo} className="hsbc-logo" alt="logo" />
       <i>I am a badass HSBC component!</i>
-      <button onClick={typeof (actionClick) !== 'undefined' ? actionClick : onClick} className="button"> Click me now! </button>
     </div>
   );
 };

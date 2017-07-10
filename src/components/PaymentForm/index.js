@@ -4,6 +4,7 @@ import './index.css';
 import SortCodeField from '../SortCodeField';
 import AccountNoField from '../AccountNoField';
 import AmountField from '../AmountField';
+import CustomField from '../CustomField';
 
 const required = value => value ? undefined : 'Required';
 const maxLengthValue = max => value =>
@@ -13,17 +14,6 @@ const maxLength = maxLengthValue(15)
 class PaymentForm extends Component {
   render() {
     const { handleSubmit } = this.props;
-    const renderField = ({ input, label, placeholder, type, meta: { touched, error, warning } }) => (
-      <div className="item">
-        <label>{label}</label>
-        <div className="inputWithMessage">
-          <input {...input} placeholder={placeholder} type={type}/>
-          {touched && ((error && <span className="errorMessage">{error}</span>) || (warning && <span className="warningMessage">{warning}</span>))}
-        </div>
-      </div>
-    )
-
-//
 
     return (
       <div className="formLayout" >
@@ -32,15 +22,15 @@ class PaymentForm extends Component {
             component={SortCodeField}
             name="sortCode"
             label="Sort Code:"
-            placeholder="__-__-__"
+            placeholder="Type Sort Code"
             type="text"
             validate={[ required ]}
           />
           <Field
             component={AccountNoField}
             name="accountNo"
-            label="Account No.:"
-            placeholder="Type account number ... 8 numbers"
+            label="Account No:"
+            placeholder="Type Account Number"
             type="text"
             validate={[ required, maxLength ]}
           />
@@ -48,14 +38,17 @@ class PaymentForm extends Component {
             component={AmountField}
             name="amount"
             label="Amount:"
-            placeholder="Type amount"
+            placeholder="Type Amount"
             type="text"
             validate={[ required, maxLength ]}
           />
-          <div>
-            <label htmlFor="reference">Reference: </label>
-            <Field name="reference" component="input" type="text"/>
-          </div>
+          <Field
+            component={CustomField}
+            name="reference"
+            label="Reference:"
+            placeholder="Type Payment Reference"
+            type="text"
+          />
           <button type="submit">Send money</button>
         </form>
       </div>
