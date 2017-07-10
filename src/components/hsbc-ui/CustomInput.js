@@ -26,7 +26,7 @@ class CustomInput extends React.Component {
   // );
   render() {
     return (
-      <div className="layout">
+      <div className="input-layout">
         <input />
       </div>
     );
