@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import './App.css';
 
 import BadassComponent from './components/hsbc-ui/BadassComponent';
-import CustomInput from './components/hsbc-ui/CustomInput';
+// import CustomInput from './components/hsbc-ui/CustomInput'; <CustomInput />
+import ContactForm from './components/ContactForm';
 import { Provider } from 'react-redux';
 import { store } from './reducers';
 
@@ -16,7 +17,8 @@ class App extends Component {
             </div>
             <div className="App-container">
               <BadassComponent name="anybody" />
-              <CustomInput />
+              <br />
+              <ContactForm />
             </div>
           </div>
         </Provider>

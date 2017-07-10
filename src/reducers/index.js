@@ -7,4 +7,4 @@ const reducers = {
   form: formReducer     // <---- Mounted at 'form'
 }
 export const reducer = combineReducers(reducers)
-export const store = createStore(reducer)
+export const store = createStore(reducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
