@@ -4,7 +4,7 @@
   text-align: center;
 }
 
-.renderItem {
+.item {
   align-items: flex-start;
   text-align: left;
 }
