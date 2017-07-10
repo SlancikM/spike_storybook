@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
-var NumberFormat = require('react-number-format');
+// var NumberFormat = require('react-number-format');
+import NumberFormat from 'react-number-format';
 
 const AccountNoField = ({ input, label, placeholder, type, meta: { touched, error, warning } }) => {
   return (
