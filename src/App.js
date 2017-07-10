@@ -3,11 +3,14 @@ import './App.css';
 
 import BadassComponent from './components/hsbc-ui/BadassComponent';
 // import CustomInput from './components/hsbc-ui/CustomInput'; <CustomInput />
-import ContactForm from './components/ContactForm';
+import PaymentForm from './components/PaymentForm';
 import { Provider } from 'react-redux';
 import { store } from './reducers';
 
 class App extends Component {
+  moveMoney = (values) => {
+    console.log(values);
+  }
   render() {
     return (
       <div className="App">
@@ -18,7 +21,7 @@ class App extends Component {
             <div className="App-container">
               <BadassComponent name="anybody" />
               <br />
-              <ContactForm />
+              <PaymentForm onSubmit={this.moveMoney} />
             </div>
           </div>
         </Provider>

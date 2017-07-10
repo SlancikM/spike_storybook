@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Field, reduxForm } from 'redux-form';
 
-class ContactForm extends Component {
+class PaymentForm extends Component {
   render() {
     const { handleSubmit } = this.props;
     return (
@@ -25,8 +25,8 @@ class ContactForm extends Component {
 }
 
 // Decorate the form component
-ContactForm = reduxForm({
+PaymentForm = reduxForm({
   form: 'payBill' // a unique name for this form
-})(ContactForm);
+})(PaymentForm);
 
-export default ContactForm;
+export default PaymentForm;
