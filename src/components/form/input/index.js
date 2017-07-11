@@ -2,8 +2,7 @@ import React from 'react';
 import './index.css';
 import classNames from 'classnames';
 
-const InputField = ({ warning, error }) => {
-  // const { warning } = props;
+const InputField = ({ error, warning }) => {
   var inputFieldClass = classNames({
     'inputField': true,
     'inputField__error': error,
