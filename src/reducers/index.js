@@ -3,7 +3,7 @@ import { createStore, combineReducers } from 'redux'
 import { reducer as formReducer } from 'redux-form'
 
 const reducers = {
-  // ... your other reducers here ...
+  // ... other reducers here ...
   form: formReducer     // <---- Mounted at 'form'
 }
 export const reducer = combineReducers(reducers)
