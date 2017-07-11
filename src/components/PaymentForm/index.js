@@ -6,6 +6,8 @@ import AccountNoField from '../AccountNoField';
 import AmountField from '../AmountField';
 import CustomField from '../CustomField';
 
+// import InputField from '../components/form/input';
+
 const required = value => value ? undefined : 'Required';
 const maxLengthValue = max => value =>
   value && value.length > max ? `Must be ${max} characters or less` : undefined

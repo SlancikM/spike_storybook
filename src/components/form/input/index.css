@@ -1,11 +1,13 @@
 .inputField {
-
+  height: 40px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 .inputField--warning {
-
+  border: 1px solid #gold;
 }
 
 .inputField--error {
-
+  border: 1px solid #red;
 }
