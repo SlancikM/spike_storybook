@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import './BadassComponent.css';
 import HSBC_logo from './HSBC_logo.png';
 
@@ -12,7 +13,7 @@ const BadassComponent = (props) => {
 };
 
 BadassComponent.propTypes = {
-  name: React.PropTypes.string
+  name: PropTypes.string
 }
 
 export default BadassComponent;
