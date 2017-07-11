@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import InputField from '../../components/form/input';
+import InputField from '../../components/form/Input';
 
 class PaymentForm extends Component {
   render() {
@@ -9,7 +9,7 @@ class PaymentForm extends Component {
     return (
       <div className="formLayout" >
         <form onSubmit={handleSubmit}>
-          <InputField error={true} />
+          <InputField error={false} warning={false} />
           <button type="submit">Send money</button>
         </form>
       </div>
