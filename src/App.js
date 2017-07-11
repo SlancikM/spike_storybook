@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import BadassComponent from './components/hsbc-ui/BadassComponent';
-// import CustomInput from './components/hsbc-ui/CustomInput'; <CustomInput />
-import PaymentForm from './components/PaymentForm';
+import PaymentForm from './containers/PaymentForm';
 import { Provider } from 'react-redux';
 import { store } from './reducers';
 
