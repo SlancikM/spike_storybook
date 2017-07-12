@@ -17,7 +17,7 @@ class InputContainer extends Component {
     const { label } = this.props;
     return (
       <div className="inputContainerLayout" >
-        <label className> { label } </label>
+        <label className="inputLabel" > { label } </label>
         <InputField ref={(c) => this.input = c} name="input" error={false} warning={false} onChange={this.trackOnChange} />
         <span></span>
       </div>
