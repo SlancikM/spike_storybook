@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import './index.css';
-import InputField from '../../components/form/Input';
+// import InputField from '../../components/form/Input';
+import InputContainer from '../../components/form/InputContainer';
 
 class PaymentForm extends Component {
   render() {
     const { handleSubmit } = this.props;
-
+    // <InputField error={false} warning={true} />
     return (
       <div className="formLayout" >
         <form onSubmit={handleSubmit}>
-          <InputField error={false} warning={true} />
+
+          <InputContainer />
           <button type="submit">Send money</button>
         </form>
       </div>
