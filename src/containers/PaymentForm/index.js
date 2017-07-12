@@ -11,7 +11,7 @@ class PaymentForm extends Component {
       <div className="formLayout" >
         <form onSubmit={handleSubmit}>
 
-          <InputContainer />
+          <InputContainer label="My custom label" />
           <button type="submit">Send money</button>
         </form>
       </div>

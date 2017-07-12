@@ -14,10 +14,10 @@ class InputContainer extends Component {
   }
 
   render() {
-
+    const { label } = this.props;
     return (
       <div className="inputContainerLayout" >
-        <label> {"New label:"} </label>
+        <label className> { label } </label>
         <InputField ref={(c) => this.input = c} name="input" error={false} warning={false} onChange={this.trackOnChange} />
         <span></span>
       </div>
