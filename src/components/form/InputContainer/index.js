@@ -6,11 +6,11 @@ class InputContainer extends Component {
 
   constructor(props) {
     super(props);
-    this.trackOnChange = this.trackOnChange.bind(this);
+    this.trackOnChange = this.trackOnChange.bind(this); // we can do it in ES 6.0 way
   }
 
-  trackOnChange() {
-    console.log('input changed .. ');
+  trackOnChange(event) {
+    console.log('input changed .. ', event.target.value);
   }
 
   render() {
@@ -18,7 +18,7 @@ class InputContainer extends Component {
     return (
       <div className="inputContainerLayout" >
         <label> {"New label:"} </label>
-        <InputField error={false} warning={false} onChange={this.trackOnChange} />
+        <InputField ref={(c) => this.input = c} name="input" error={false} warning={false} onChange={this.trackOnChange} />
         <span></span>
       </div>
     );
