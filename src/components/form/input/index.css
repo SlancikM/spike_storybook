@@ -13,13 +13,14 @@
 }
 
 .inputField__warning {
-  border: 1px solid #FFFF00;
+  border: 1px solid #E9A115;
 }
 
 .inputField__error {
-  border: 1px solid #FF0000;
+  border: 1px solid #DB0011;
 }
 
+/*#AF000D;*/
 
 .inputField:hover {
   border: 1px solid #376798;

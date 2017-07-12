@@ -9,7 +9,7 @@ class PaymentForm extends Component {
     return (
       <div className="formLayout" >
         <form onSubmit={handleSubmit}>
-          <InputField error={false} warning={false} />
+          <InputField error={false} warning={true} />
           <button type="submit">Send money</button>
         </form>
       </div>
