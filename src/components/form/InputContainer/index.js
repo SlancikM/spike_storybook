@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './index.css';
-import InputField from '../Input';
+import InputField from '../InputField';
 
 class InputContainer extends Component {
 
