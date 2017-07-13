@@ -1,6 +1,7 @@
 import React from 'react';
 import './index.css';
 import classNames from 'classnames';
+import helpFactory from '../Help';
 
 const InputField = ({ error, warning, onChange }) => {
   var inputFieldClass = classNames({
@@ -12,4 +13,4 @@ const InputField = ({ error, warning, onChange }) => {
   return (<input className={inputFieldClass} type="text" onChange={onChange} />);
 }
 
-export default InputField;
+export default helpFactory(InputField);

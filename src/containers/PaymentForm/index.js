@@ -10,19 +10,14 @@ class PaymentForm extends Component {
     return (
       <div className="formLayout" >
         <form onSubmit={handleSubmit}>
-          <InputContainer label="Any custom label" />
-          <InputContainer label="Mandatory field*" />
-          <InputContainer label="Third label" />
+          <InputContainer label="Any custom label" isHelpRequired={true} />
+          <InputContainer label="Mandatory field*" isHelpRequired={false} />
+          <InputContainer label="Third label"/>
           <button type="submit">Send money</button>
         </form>
       </div>
     );
   }
 }
-
-// Decorate the form component
-// PaymentForm = reduxForm({
-//   form: 'payBill' // a unique name for this form
-// })(PaymentForm);
 
 export default PaymentForm;

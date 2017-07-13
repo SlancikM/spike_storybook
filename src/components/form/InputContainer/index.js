@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './index.css';
 import InputField from '../InputField';
 
+
 class InputContainer extends Component {
 
   constructor(props) {
@@ -14,15 +15,22 @@ class InputContainer extends Component {
   }
 
   render() {
-    const { label } = this.props;
+    const { label, isHelpRequired } = this.props;
+    // console.log('isHelpRequired: ', this.props.isHelpRequired);
+    
     return (
       <div className="inputContainerLayout" >
         <label className="inputLabel" > { label } </label>
-        <InputField ref={(c) => this.input = c} name="input" error={false} warning={false} onChange={this.trackOnChange} />
-        <span></span>
+        <InputField
+          ref={(c) => this.input = c}
+          name="input"
+          error={false}
+          warning={false}
+          isHelpRequired={isHelpRequired}
+          onChange={this.trackOnChange} />
       </div>
     );
   }
 }
 
-export default InputContainer;
+export default (InputContainer);
