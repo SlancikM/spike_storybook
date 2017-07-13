@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './index.less';
 
 function helpFactory(WrappedComponent) {
 
@@ -13,7 +13,7 @@ function helpFactory(WrappedComponent) {
       )
     }
   }
-  
+
 }
 
 export default helpFactory;
