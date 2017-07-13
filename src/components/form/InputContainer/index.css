@@ -1,8 +1,11 @@
 .inputContainerLayout {
   width: 100%;
+  padding-top: 10px;
   text-align: left;
 }
 
 .inputLabel {
-  color: blue;
+  padding-top: 0px;
+  font-size: 14px;
+  color: #333333;
 }

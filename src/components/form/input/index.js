@@ -8,7 +8,6 @@ const InputField = ({ error, warning, onChange }) => {
     'inputField__error': error,
     'inputField__warning': warning,
   });
-  console.log('onChange fnc: ', onChange);
 
   return (<input className={inputFieldClass} type="text" onChange={onChange} />);
 }
