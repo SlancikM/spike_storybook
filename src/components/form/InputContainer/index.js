@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './index.css';
 import InputField from '../InputField';
+import validationFactory from '../Validation';
 
 class InputContainer extends Component {
 
@@ -24,11 +25,11 @@ class InputContainer extends Component {
           name="input"
           error={false}
           warning={false}
-          isHelpRequired={true}
+          isHelpRequired={isHelpRequired}
           onChange={this.trackOnChange} />
       </div>
     );
   }
 }
 
-export default (InputContainer);
+export default validationFactory(InputContainer);
