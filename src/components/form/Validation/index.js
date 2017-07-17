@@ -22,11 +22,12 @@ function validationFactory(WrappedComponent) {
       return true;
     }
 
+    // TODO: Validation occured - extract to new component InlineValidation
     render() {
       return (
         <div className="validationContainer" >
           <WrappedComponent {...this.props}/>
-          { this.isValid() && <span>Validation occured </span> }
+          { this.isValid() && <div><div className="warning"></div> <span>Validation occured </span></div> }
         </div>
       )
     }

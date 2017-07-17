@@ -9,7 +9,7 @@ function helpFactory(WrappedComponent) {
       return (
         <div className="helpContainer" >
           <WrappedComponent {...this.props}/>
-          { this.props.isHelpRequired && <Tooltip />}
+          { this.props.isHelpRequired && <Tooltip message="Lorem ipsum bla" /> }
         </div>
       )
     }

@@ -3,7 +3,7 @@ import './index.css';
 
 const Tooltip = ({ message }) => {
   return (<div className="tooltip">
-            <span className="tooltiptext">Tooltip info</span>
+            <span className="tooltiptext">{message}</span>
           </div>);
 }
 

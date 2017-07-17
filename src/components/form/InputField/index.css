@@ -14,22 +14,24 @@
 
 .inputField__warning {
   border: 1px solid #E9A115;
+  background-color: #FBF8F3;
 }
 
 .inputField__error {
   border: 1px solid #DB0011;
+  background-color: #F9F2F3
 }
 
 /*#AF000D;*/
 
-.inputField:hover {
+/*.inputField:hover {
   border: 1px solid #376798;
 }
 
 .inputField:active {
   font-size: 14px;
   color: #333333;
-}
+}*/
 
 /*.inputField:focus {
   outline:none;

@@ -1,19 +1,13 @@
-
+/* old styles  */
 .formLayout {
   display: flex;
   text-align: center;
-  padding-left: 100px;
+  padding-left: 200px;
   padding-top: 30px;
 }
 
 .item {
-  align-items: flex-start;
-  text-align: left;
   width: 300px;
-}
-
-.inputWithMessage {
-
 }
 
 /*input[type=text], select {

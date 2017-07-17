@@ -4,6 +4,15 @@
   text-align: left;
 }
 
+.layoutBox {
+  display: inline-block;
+  min-width: 200px;
+}
+
+.inputLabelContainer {
+  min-width: 130px;
+}
+
 .inputLabel {
   padding-top: 0px;
   font-size: 14px;
