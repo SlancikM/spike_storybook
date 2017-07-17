@@ -8,10 +8,10 @@ function validationFactory(WrappedComponent) {
     isValid() {
       const { min, max, message } = this.props;
 
-      // TODO: ...
-      // if ()
+      // TODO:
       // https://www.youtube.com/watch?v=jeXPk18n2cI
-      //
+
+      // this will be custom function
       if ( min < 0) {
         return false;
       }

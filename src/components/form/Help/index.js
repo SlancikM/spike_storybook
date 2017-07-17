@@ -1,5 +1,6 @@
 import React from 'react';
 import './index.css';
+import Tooltip from '../Tooltip';
 
 function helpFactory(WrappedComponent) {
 
@@ -8,7 +9,7 @@ function helpFactory(WrappedComponent) {
       return (
         <div className="helpContainer" >
           <WrappedComponent {...this.props}/>
-          { this.props.isHelpRequired && <div className="helpIcon" />}
+          { this.props.isHelpRequired && <Tooltip />}
         </div>
       )
     }
