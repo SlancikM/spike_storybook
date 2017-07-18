@@ -3,6 +3,12 @@ import './index.css';
 import FormField from '../../components/form/FormField';
 
 class PaymentForm extends Component {
+
+  onBlur() {
+    console.log('hello !!');
+  
+  }
+
   render() {
     const { handleSubmit } = this.props;
 
@@ -18,6 +24,7 @@ class PaymentForm extends Component {
           <FormField mandatory={false} label="Third label"
           />
           <button type="submit">Send money</button>
+          <input type="text" onBlur={this.onBlur.bind(this)} />
         </form>
       </div>
     );

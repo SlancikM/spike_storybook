@@ -10,11 +10,39 @@ class FormField extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+      isValid: false,
+    };
     this.trackOnChange = this.trackOnChange.bind(this); // we can do it in ES 6.0 way
+    // this.onBlur = this.onBlur.bind(this);
+    // onChange={this.trackOnChange}
   }
 
   trackOnChange(event) {
-    console.log('Input changed .. ', event.target.value);
+    console.log('Input chan .. ', event.target.value);
+    this.isValid(event.target.value);
+  }
+
+  onFocusOut() {
+    console.log('... onFocusOut ... ');
+  }
+
+  onFocus() {
+    console.log('onFocus ... ');
+  }
+
+  isValid(value) {
+    if (value.length > 2) {
+      this.setState({
+        isValid: false
+      })
+    } else {
+      this.setState({
+        isValid: true
+      })
+    }
+
+
   }
 
   render() {
@@ -29,9 +57,18 @@ class FormField extends Component {
           <Input
             ref={(c) => this.input = c}
             name="input"
+            focusable
+            onFocusOut={this.onFocusOut.bind(this)}
             error={error}
             warning={warning}
-            onChange={this.trackOnChange} />
+          />
+            { this.state.isValid &&
+              <div>
+                <div className="icon"></div>
+                <label>Warning message ..</label>
+              </div>
+            }
+
         </div>
         <div className={classNames("layoutBox", "tooltipContainer")}>
         { this.props.tooltipMessage &&
