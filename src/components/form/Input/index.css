@@ -1,8 +1,9 @@
-.inputField {
+.input {
   width: 300px;
   height: 40px;
+  margin: 0 0;
   padding: 12px 10px;
-  margin: 8px 0;
+
   font-size: 14px;
   color: #333333;
   display: inline-block;
@@ -12,14 +13,19 @@
   opacity: 1;
 }
 
-.inputField__warning {
+.input__warning {
   border: 1px solid #E9A115;
   background-color: #FBF8F3;
 }
 
-.inputField__error {
+.input__error {
   border: 1px solid #DB0011;
   background-color: #F9F2F3
+}
+
+.input:disabled {
+  border: 1px solid #929292;
+  opacity: 0.5;
 }
 
 /*#AF000D;*/
@@ -37,8 +43,3 @@
   outline:none;
   border:1px solid red;
 }*/
-
-.inputField:disabled {
-  border: 1px solid #929292;
-  opacity: 0.5;
-}

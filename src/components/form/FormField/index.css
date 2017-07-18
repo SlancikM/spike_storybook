@@ -1,20 +1,41 @@
 .inputContainerLayout {
-  width: 100%;
-  padding-top: 10px;
+
+  padding-top: 20px;
   text-align: left;
 }
+/*width: 100%;*/
 
 .layoutBox {
   display: inline-block;
-  min-width: 200px;
 }
 
-.inputLabelContainer {
+.labelContainer {
+  height: 100%;
   min-width: 130px;
+  /*background-color: grey;*/
+  font-size: 14px;
 }
 
-.inputLabel {
+.label {
   padding-top: 0px;
   font-size: 14px;
   color: #333333;
+}
+
+
+.inputContainer {
+  background-color: red;
+}
+
+
+.tooltipContainer {
+  background-color: yellow;
+}
+
+.tooltip {
+  width: 20px;
+  height: 20px;
+  /*background-image: url('./help-icon.png');
+  background-repeat: no-repeat;
+  background-size: 40px 40px;*/
 }

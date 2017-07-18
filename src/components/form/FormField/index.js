@@ -1,18 +1,12 @@
 import React, { Component } from 'react';
 import './index.css';
-import InputField from '../InputField';
-import validationFactory from '../Validation';
-
-import Tooltip from '../Tooltip';
 import classNames from 'classnames';
+import Input from '../Input';
+import validationFactory from '../Validation';
+import Tooltip from '../Tooltip';
 
-// var inputFieldClass = classNames({
-//   'inputField': true,
-//   'inputField__error': error,
-//   'inputField__warning': warning,
-// });
 
-class InputContainer extends Component {
+class FormField extends Component {
 
   constructor(props) {
     super(props);
@@ -20,33 +14,33 @@ class InputContainer extends Component {
   }
 
   trackOnChange(event) {
-    console.log('input changed .. ', event.target.value);
+    console.log('Input changed .. ', event.target.value);
   }
 
+  //               <Tooltip message="Lorem ipsum bla" />
+// { this.props.isHelpRequired &&
   render() {
     const { label, mandatory, error, warning, isHelpRequired } = this.props;
-
     return (
       <div className="inputContainerLayout" >
-        <div className={classNames("layoutBox", "inputLabelContainer")}>
-          <label className="inputLabel" >{label}</label>
+        <div className={classNames("layoutBox", "labelContainer")}>
+          <label className="label" >{label}</label>
           { mandatory && <span>*</span> }
         </div>
-        <div className="layoutBox">
-          <InputField
+        <div className={classNames("layoutBox", "inputContainer")}>
+          <Input
             ref={(c) => this.input = c}
             name="input"
             error={error}
             warning={warning}
-            isHelpRequired={isHelpRequired}
             onChange={this.trackOnChange} />
         </div>
-        <div className="layoutBox">
-          <Tooltip message="Lorem ipsum bla" />
+        <div className={classNames("layoutBox", "tooltipContainer")}>
+          <div className="tooltip"></div>
         </div>
       </div>
     );
   }
 }
 
-export default validationFactory(InputContainer);
+export default FormField; // validationFactory(FormField);

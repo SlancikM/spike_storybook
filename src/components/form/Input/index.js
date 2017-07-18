@@ -3,11 +3,11 @@ import './index.css';
 import classNames from 'classnames';
 // import helpFactory from '../Help';
 
-const InputField = ({ error, warning, onChange }) => {
+const Input = ({ error, warning, onChange }) => {
   var inputFieldClass = classNames({
-    'inputField': true,
-    'inputField__error': error,
-    'inputField__warning': warning,
+    'input': true,
+    'input__error': error,
+    'input__warning': warning,
   });
 
   return (<input className={inputFieldClass} type="text" onChange={onChange} />);
@@ -15,4 +15,4 @@ const InputField = ({ error, warning, onChange }) => {
 
 
 
-export default (InputField);
+export default Input;

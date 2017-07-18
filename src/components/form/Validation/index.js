@@ -6,7 +6,7 @@ function validationFactory(WrappedComponent) {
   return class validationFactory extends React.Component {
 
     isValid() {
-      const { min, max, message } = this.props;
+      const { min, max } = this.props;
 
       // TODO:
       // https://www.youtube.com/watch?v=jeXPk18n2cI
