@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import './index.css';
 import classNames from 'classnames';
 import Input from '../Input';
-import validationFactory from '../Validation';
 import Tooltip from '../Tooltip';
+import validationFactory from '../Validation';
 
 
 class FormField extends Component {
@@ -17,10 +17,8 @@ class FormField extends Component {
     console.log('Input changed .. ', event.target.value);
   }
 
-  //               <Tooltip message="Lorem ipsum bla" />
-// { this.props.isHelpRequired &&
   render() {
-    const { label, mandatory, error, warning, isHelpRequired } = this.props;
+    const { label, mandatory, tooltipMessage, error, warning, isHelpRequired } = this.props;
     return (
       <div className="inputContainerLayout" >
         <div className={classNames("layoutBox", "labelContainer")}>
@@ -36,7 +34,9 @@ class FormField extends Component {
             onChange={this.trackOnChange} />
         </div>
         <div className={classNames("layoutBox", "tooltipContainer")}>
-          <div className="tooltip"></div>
+        { this.props.tooltipMessage &&
+            <Tooltip message={tooltipMessage} />
+        }
         </div>
       </div>
     );

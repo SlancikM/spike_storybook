@@ -1,29 +1,65 @@
 
 .tooltip {
-  width: 40px;
-  height: 40px;
-  background-color: green;
-  /*background-image: url('./help-icon.png');
+  width: 24px;
+  height: 24px;
+  cursor: help;
+
+  background-image: url('./help-icon.png');
   background-repeat: no-repeat;
-  background-size: 40px 40px;*/
+  background-size: 24px 24px;
+  /*tabindex: 2;*/
+}
+
+.arrow-left {
+  /*visibility: hidden;*/
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:10px solid blue;
 }
 
 .tooltip .tooltiptext {
     visibility: hidden;
-    width: 220px;
-    background-color: black;
-    color: #fff;
+    min-width: 50px;
+    color: #000000;
+    border: 1px solid #000000;
     text-align: left;
     font-size: 14px;
-    padding: 5px 0;
-    padding: 3px 3px;
-    margin-top: -10px;
+    padding: 3px 10px;
+    margin-top: 0px;
     margin-left: 30px;
 
     position: absolute;
     z-index: 1;
 }
 
+/*Css tooltip arrow*/
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
 .tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+/*.arrow-left:hover {
+  visibility: visible;
+  width: 0;
+  height: 0;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+  border-right:10px solid blue;
+}*/
+
+
+.tooltip:focus .tooltiptext {
     visibility: visible;
 }
