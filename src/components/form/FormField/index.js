@@ -58,7 +58,7 @@ class FormField extends Component {
             ref={(c) => this.input = c}
             name="input"
             focusable
-            onFocusOut={this.onFocusOut.bind(this)}
+            onChange={this.trackOnChange}
             error={error}
             warning={warning}
           />

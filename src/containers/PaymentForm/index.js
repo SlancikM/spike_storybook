@@ -6,7 +6,6 @@ class PaymentForm extends Component {
 
   onBlur() {
     console.log('hello !!');
-  
   }
 
   render() {
@@ -16,7 +15,7 @@ class PaymentForm extends Component {
       <div className="formLayout" >
         <form onSubmit={handleSubmit}>
           <FormField mandatory={true} label="Custom label" max={50} error={true} warning={false} format="--"
-              tooltipMessage="Amount to be sent to beneficiary (excluding any charges)"
+              tooltipMessage="Amount to be sent to beneficiaryfadfjalfalfjalfj lf jdlfjalf jafj lfjawlfja ljflajflaf (excluding any charges)"
           />
           <FormField mandatory={true} label="Mandatory field" min={5} error={false} warning={true}
               tooltipMessage="Amount to be sent to Milan S."
@@ -24,7 +23,6 @@ class PaymentForm extends Component {
           <FormField mandatory={false} label="Third label"
           />
           <button type="submit">Send money</button>
-          <input type="text" onBlur={this.onBlur.bind(this)} />
         </form>
       </div>
     );
