@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom';
 import FormField from './';
 import { shallow, mount } from 'enzyme';
 
-// console.log(mount(<FormField />).debug());
 describe('<FormField /> ', () => {
 
   it(' should render without crashing', () => {

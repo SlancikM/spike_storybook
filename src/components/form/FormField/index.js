@@ -42,4 +42,14 @@ FormField.propTypes = {
   warning: PropTypes.bool,
 };
 
+// //Messages should be an object with a title and text property of type string
+//  message: React.PropTypes.shape({
+//    title: React.PropTypes.string,
+//    text: React.PropTypes.string
+//  }).isRequired,
+//  //The comments property needs to be an array of objects.
+//  comments: React.PropTypes.arrayOf(React.PropTypes.object),
+//  //The date needs to be an instance of type Date.
+//  date: React.PropTypes.instanceOf(Date)
+
 export default FormField; // validationFactory(FormField);
