@@ -22,7 +22,10 @@ class PaymentForm extends Component {
           />
           <FormField mandatory={false} label="Third label"
           />
-          <button type="submit">Send money</button>
+          <div className="submitLayout" >
+            <button type="submit">Send money</button>
+          </div>
+
         </form>
       </div>
     );

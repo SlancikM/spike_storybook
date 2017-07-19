@@ -5,6 +5,13 @@
   padding-top: 30px;
 }
 
+.submitLayout {
+  text-align: center;
+  padding-left: 130px;
+  max-width: 300px;
+  padding-top: 10px;
+}
+
 button {
     width: 100%;
     padding: 12px 20px;
