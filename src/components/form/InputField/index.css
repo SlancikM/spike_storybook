@@ -1,11 +1,17 @@
 .typeIcon__error {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   background-image: url('./icon_error.png');
   background-repeat: no-repeat;
-  background-size: 24px 24px;
+  background-size: 20px 20px;
 }
 
 .typeIcon__warning {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
   background-image: url('./icon_warning.png');
   background-repeat: no-repeat;
-  background-size: 24px 24px;
+  background-size: 20px 20px;
 }

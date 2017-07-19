@@ -43,7 +43,6 @@ class InputField extends Component {
         message: "It is OK"
       })
     }
-
   }
 
   render() {
