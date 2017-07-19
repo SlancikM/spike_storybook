@@ -1,0 +1,11 @@
+.typeIcon__error {
+  background-image: url('./icon_error.png');
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+}
+
+.typeIcon__warning {
+  background-image: url('./icon_warning.png');
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+}

@@ -12,6 +12,4 @@ const Input = ({ error, warning, onChange, onBlur }) => {
   return (<input className={inputFieldClass} type="text" onChange={onChange} onBlur={onBlur} />);
 }
 
-
-
 export default Input;
