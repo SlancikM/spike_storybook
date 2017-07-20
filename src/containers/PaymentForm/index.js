@@ -4,10 +4,6 @@ import FormField from '../../components/form/FormField';
 
 class PaymentForm extends Component {
 
-  onBlur() {
-    console.log('hello !!');
-  }
-
   render() {
     const { handleSubmit } = this.props;
 
