@@ -12,7 +12,7 @@ class FormField extends Component {
   }
 
   render() {
-    const { label, mandatory, tooltipMessage, error, warning } = this.props;
+    const { label, mandatory, tooltipMessage, error, warning, min, max } = this.props;
     return (
       <div className="inputContainerLayout" >
         <div className={classNames("layoutBox", "labelContainer")}>
@@ -20,7 +20,7 @@ class FormField extends Component {
           <label className="label" >{label}</label>
         </div>
         <div className={classNames("layoutBox", "inputContainer")}>
-          <InputField />
+          <InputField min={min} max={max} />
         </div>
         <div className={classNames("layoutBox", "tooltipContainer")}>
         { this.props.tooltipMessage &&

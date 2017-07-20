@@ -29,19 +29,26 @@ class InputField extends Component {
   }
 
   validate(value) {
-    if (value.length > 10) {
+    if (this.props.min > value) {
       this.setState({
         isError: true,
         isWarning: false,
         isInfo: false,
-        message: "Too long world"
+        message: `Value is smaller than minimal value of ${this.props.min}`
+      })
+    } else if (this.props.max < value) {
+      this.setState({
+        isError: true,
+        isWarning: false,
+        isInfo: false,
+        message: `Value is smaller than maximal value of ${this.props.max}`
       })
     } else {
       this.setState({
         isError: false,
         isWarning: false,
-        isInfo: false,
-        message: "It is OK"
+        isInfo: true,
+        message: "Value is correct"
       })
     }
   }
@@ -50,7 +57,6 @@ class InputField extends Component {
 
     var errorTypeIconClass = classNames({
       'typeIcon__error': this.state.isError,
-      'typeIcon__warning': this.state.isWarning,
       'typeIcon__info': this.state.isInfo,
     });
 
@@ -63,10 +69,10 @@ class InputField extends Component {
         error={this.state.isError}
         warning={this.state.isWarning}
       />
-      { this.state.isError &&
+      { (this.state.isError || this.state.isInfo) &&
         <div>
           <div className={errorTypeIconClass}></div>
-          <label>{this.state.message}</label>
+          <label className="inlineInfo">{this.state.message}</label>
         </div>
       }
     </div>);

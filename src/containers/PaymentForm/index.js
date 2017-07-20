@@ -14,10 +14,10 @@ class PaymentForm extends Component {
     return (
       <div className="formLayout" >
         <form onSubmit={handleSubmit}>
-          <FormField mandatory={true} label="Custom label" max={50} error={true} warning={false} format="--"
+          <FormField mandatory={true} label="Custom label" min={10} max={100} error={true} warning={false} format="--"
               tooltipMessage="Amount to be sent to beneficiary (excluding any charges)"
           />
-          <FormField mandatory={true} label="Mandatory field" min={5} error={false} warning={true}
+          <FormField mandatory={true} label="Mandatory field" min={0} max={1000}  error={false} warning={true}
               tooltipMessage="Amount to be sent to Milan S."
           />
           <FormField mandatory={false} label="Third label"
