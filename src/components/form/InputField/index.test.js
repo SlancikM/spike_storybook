@@ -10,9 +10,9 @@ describe('<InputField /> ', () => {
     ReactDOM.render(<InputField />, div);
   });
 
-  it('should have 2 children - icon & label', () => {
+  it('should have 1 children - input field', () => {
     const wrapper = shallow(<InputField />);
-    expect(wrapper.children()).toHaveLength(2);
+    expect(wrapper.children()).toHaveLength(1);
   });
 
 });

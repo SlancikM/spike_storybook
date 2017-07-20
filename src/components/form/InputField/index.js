@@ -14,20 +14,21 @@ class InputField extends Component {
       isInfo: false,
       message: "No message",
     };
-    this.onChange = this.onChange.bind(this); // we can do it in ES 6.0 way
+    // we can do it in ES 6.0 way
+    this.onChange = this.onChange.bind(this);
     this.onBlur = this.onBlur.bind(this);
   }
 
   onChange(event) {
     console.log('onChange: ', event.target.value);
-    this.isValid(event.target.value);
+    this.validate(event.target.value);
   }
 
   onBlur(event) {
     console.log('onBlur: ', event.target.value);
   }
 
-  isValid(value) {
+  validate(value) {
     if (value.length > 10) {
       this.setState({
         isError: true,

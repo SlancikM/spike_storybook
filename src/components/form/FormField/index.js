@@ -4,8 +4,6 @@ import './index.css';
 import classNames from 'classnames';
 import InputField from '../InputField';
 import Tooltip from '../Tooltip';
-// import validationFactory from '../Validation';
-
 
 class FormField extends Component {
 
