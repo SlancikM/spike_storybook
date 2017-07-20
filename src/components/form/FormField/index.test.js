@@ -7,11 +7,11 @@ describe('<FormField /> ', () => {
 
   it(' should render without crashing', () => {
     const div = document.createElement('div');
-    ReactDOM.render(<FormField label="some label" />, div);
+    ReactDOM.render(<FormField label="some label" mandatory={false} />, div);
   });
 
   it('should have 3 children - label, input & help', () => {
-    const wrapper = shallow(<FormField label="some label" />);
+    const wrapper = shallow(<FormField label="some label" mandatory={false} />);
     expect(wrapper.children()).toHaveLength(3);
   });
 
