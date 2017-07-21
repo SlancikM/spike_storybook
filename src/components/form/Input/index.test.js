@@ -23,4 +23,5 @@ describe('<InputField /> ', () => {
     const wrapper = shallow(<InputField warning={true} />);
     expect(wrapper.find('input').hasClass('input__warning')).toEqual(true);
   });
+  
 });
