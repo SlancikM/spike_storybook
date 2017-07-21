@@ -1,0 +1,25 @@
+.typeIcon__error {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('./icon_error.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.typeIcon__info {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  background-image: url('./icon_info.png');
+  background-repeat: no-repeat;
+  background-size: 20px 20px;
+}
+
+.inlineInfo {
+  display: inline-block;
+  font-size: 14px;
+  vertical-align: top;
+  padding-top: 3px;
+  padding-left: 2px;
+}

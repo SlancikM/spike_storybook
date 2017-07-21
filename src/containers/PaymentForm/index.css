@@ -1,0 +1,29 @@
+.formLayout {
+  text-align: center;
+  padding-left: 200px;
+  padding-right: 200px;
+  padding-top: 30px;
+}
+
+.submitLayout {
+  text-align: center;
+  padding-left: 130px;
+  max-width: 300px;
+  padding-top: 10px;
+}
+
+*:focus {
+    outline: none;
+}
+
+button {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    color: #FFFFFF;
+    border-radius: 4px;
+    box-sizing: border-box;
+    background-color: #FF0000;
+}

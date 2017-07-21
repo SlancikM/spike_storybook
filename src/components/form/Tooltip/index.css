@@ -1,0 +1,49 @@
+
+.tooltip {
+  width: 24px;
+  height: 24px;
+  cursor: help;
+  background-image: url('./help-icon.png');
+  background-repeat: no-repeat;
+  background-size: 24px 24px;
+  position: relative;
+}
+
+.tooltip .tooltiptext {
+    visibility: hidden;
+    min-width: 250px;
+    color: #000000;
+    border: 1px solid #000000;
+    text-align: left;
+    font-size: 12px;
+    padding: 5px 10px;
+    margin-top: 0px;
+    margin-left: 30px;
+
+    position: absolute;
+    z-index: 1;
+
+    top: 50%;
+    transform: translateY(-50%);
+    /*transform - napisat variantu pre operu a mozzilu*/
+}
+
+/*Css tooltip arrow*/
+.tooltip .tooltiptext::after {
+    content: " ";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent black transparent transparent;
+}
+
+.tooltip:hover .tooltiptext {
+    visibility: visible;
+}
+
+.tooltip:focus .tooltiptext {
+    visibility: visible;
+}
