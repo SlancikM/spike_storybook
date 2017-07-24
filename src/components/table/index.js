@@ -5,70 +5,118 @@ import classNames from 'classnames';
 import ReactTable from 'react-table';
 import 'react-table/react-table.css';
 
+import FormField from '../form/FormField';
+
 class TableWidget extends Component {
 
   constructor(props) {
     super(props);
   }
 
+  onColumnClick(event) {
+    console.log(event);
+  }
+
   render() {
     const data = [{
-                  name: 'Tanner Linsley',
-                  age: 26,
-                  friend: {
-                    name: 'Jason Maurer',
-                    age: 23,
+                    entry: 1,
+                    beneName:'Tanner Linsley',
+                    beneRef: 'FLDANFOMFHAOA',
+                    purpose: 'Some purpose',
+                    amount: '123',
+                  },
+                  {
+                    entry: 2,
+                    beneName:'Jason Maurer',
+                    beneRef: 'FDNALFALNLNLLN',
+                    purpose: 'Some purpose',
+                    amount: '10'
+                  },
+                  {
+                    entry: 3,
+                    beneName:'Milan Slancik',
+                    beneRef: 'NVCVONOWNGNVSOI',
+                    purpose: 'Some purpose',
+                    amount: '1000'
+                  },
+                  {
+                    entry: 4,
+                    beneName:'Adriana Helikova',
+                    beneRef: 'VMOHOENVONHSLF',
+                    purpose: 'Some purpose',
+                    amount: '99'
                   }
-                },
-                {
-                  name: 'Jason Maurer',
-                  age: 32,
-                  friend: {
-                    name: 'Milan Slancik',
-                    age: 23,
-                  }
-                },
-                {
-                  name: 'Milan Slancik',
-                  age: 33,
-                  money: 130 + 130 - 70 + 56 - 27 + 360 - 245 - 50 - 10 - 10 - 10 + 340 - 280 + 5,
-                  friend: {
-                    name: 'Tanner Linsley',
-                    age: 26,
-                  }
-                },
-              ];
+
+                 ];
 
     const columns = [
             {
-              Header: 'Whole name',
-              accessor: 'name' // String-based value accessors!
+              Header: () => (<div><input type="checkbox" onClick={this.onColumnClick.bind(this)} /></div>),
+              accessor: 'checked', // String-based value accessors!
+              Cell: () => (<div><input type="checkbox" /></div>),
+              sortable: false,
+              resizable: false,
+              width: 50,
             },
             {
-              Header: 'Age',
-              accessor: 'age',
+              Header: 'Entry',
+              accessor: 'entry', // String-based value accessors!
+              Cell: row => (<span>
+                              {row.value}
+                            </span>),
+              width: 100,
+              sortable: true,
+              resizable: false,
+            },
+            {
+              Header: 'Beneficiary name',
+              accessor: 'beneName',
+              Cell: props => <span className='number'>{props.value}</span>, // Custom cell components!
+              width: 250,
+            },
+            {
+              Header: 'Purpose',
+              accessor: 'purpose',
+              Cell: props => <span className='number'>{props.value}</span>, // Custom cell components!
+              width: 350,
+            },
+            {
+              Header: 'Beneficiary reference',
+              accessor: 'beneRef',
               Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
             },
+
             {
-              Header: 'Income',
-              accessor: 'money',
-              Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
-            },
-            {
-              id: 'friendName', // Required because our accessor is not a string
-              Header: 'Friend Name',
-              accessor: d => d.friend.name // Custom value accessors!
-            }, {
-              Header: props => <span>Friend Age</span>, // Custom header components!
-              accessor: 'friend.age'
-            }]
+              Header: 'Amount',
+              accessor: 'amount',
+              Cell: props => <span className='number'>{props.value}</span>,
+              width: 100,
+            }];
 
     return (<ReactTable
               data={data}
+              className="-striped -highlight"
               columns={columns}
               defaultPageSize={10}
               minRows={3}
-            />);
+              SubComponent={(row) => {
+                              return (
+                                <div>
+                                  You can put any component you want here, Spark-charts, drill-throughs, infographics... the possibilities are endless!
+                                  <FormField mandatory={true} label="Custom label" min={10} max={100} error={true} warning={false} format="--"
+                                      tooltipMessage="Amount to be sent to beneficiary (excluding any charges)"
+                                  />
+                                  <FormField mandatory={true} label="Mandatory field" min={0} max={1000}  error={false} warning={true}
+                                      tooltipMessage="Amount to be sent to Milan S."
+                                  />
+                                  <FormField mandatory={false} label="Third label"
+                                  />
+                                </div>
+                              )
+                            }}
+            >
+
+            </ReactTable>);
   }
 
 }
