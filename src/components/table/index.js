@@ -101,8 +101,7 @@ class TableWidget extends Component {
               minRows={3}
               SubComponent={(row) => {
                               return (
-                                <div>
-                                  You can put any component you want here, Spark-charts, drill-throughs, infographics... the possibilities are endless!
+                                <div className="subComponent">
                                   <FormField mandatory={true} label="Custom label" min={10} max={100} error={true} warning={false} format="--"
                                       tooltipMessage="Amount to be sent to beneficiary (excluding any charges)"
                                   />
@@ -114,6 +113,17 @@ class TableWidget extends Component {
                                 </div>
                               )
                             }}
+              getTrProps={(state, rowInfo, column, instance) => {
+                  return {
+                    onClick: e => {
+                      console.log('A TR Element was clicked!')
+                      console.log('it produced this event:', e)
+                      console.log('It was in this column:', column)
+                      console.log('It was in this row:', rowInfo)
+                      console.log('It was in this table instance:', instance)
+                    }
+                  }
+                }}
             >
 
             </ReactTable>);
