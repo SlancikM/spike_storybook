@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import './App.css';
 
 import BadassComponent from './components/hsbc-ui/BadassComponent';
-import PaymentForm from './containers/PaymentForm';
+// import PaymentForm from './containers/PaymentForm';
+import TableWidget from './components/table';
+
 import { Provider } from 'react-redux';
 import { store } from './reducers';
 
@@ -11,6 +13,8 @@ class App extends Component {
     console.log(values);
     alert(`Have a nice day: ${JSON.stringify(values)}`);
   }
+  // <PaymentForm onSubmit={this.moveMoney} />
+
   render() {
     return (
       <div className="App">
@@ -21,7 +25,7 @@ class App extends Component {
             <div className="App-container">
               <BadassComponent name="anybody" />
               <br />
-              <PaymentForm onSubmit={this.moveMoney} />
+              <TableWidget />
             </div>
           </div>
         </Provider>
