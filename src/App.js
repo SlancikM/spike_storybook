@@ -28,7 +28,7 @@ class App extends Component {
             <div className="App-container">
               <BadassComponent name="anybody" />
               <br />
-              <Pagination numPages={15} paginateFunc={this.refreshTable} />
+              <Pagination numPages={15} paginate={this.refreshTable} />
             </div>
           </div>
         </Provider>
