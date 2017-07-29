@@ -13,6 +13,11 @@ class App extends Component {
     console.log(values);
     alert(`Have a nice day: ${JSON.stringify(values)}`);
   }
+
+  refreshTable(index) {
+    console.log('REfreshing page ... ', index)
+  }
+
   render() {
     return (
       <div className="App">
@@ -23,8 +28,7 @@ class App extends Component {
             <div className="App-container">
               <BadassComponent name="anybody" />
               <br />
-
-              <Pagination numPages="3" />
+              <Pagination numPages="15" paginateFunc={this.refreshTable} />
             </div>
           </div>
         </Provider>
