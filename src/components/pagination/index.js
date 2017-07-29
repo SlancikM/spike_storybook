@@ -25,7 +25,7 @@ class Pagination extends Component {
       return res;
   }
 
-  onSelectChange(event) {
+  onChange(event) {
       const { paginateFunc } = this.props;
       paginateFunc(this.selection.value);
   }
@@ -51,14 +51,14 @@ class Pagination extends Component {
 
       return (
             <div className="paginationLayout" >
-              <span>Page</span>
-              <select ref={(sel) => { this.selection = sel; }} onChange={this.onSelectChange.bind(this)}>
+              <span className="labelPage" >Page</span>
+              <select className="select" ref={(sel) => { this.selection = sel; }} onChange={this.onChange.bind(this)}>
                 {this.renderOptions()}
               </select>
-              <span>of</span>
-              <span>{numPages}</span>
-              <button onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
-              <button onClick={this.nextClick.bind(this)} ><i className="next"></i></button>
+              <span className="labelOf" >of</span>
+              <span className="labelNumPages">{numPages}</span>
+              <button className="prevButton" onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
+              <button className="nextButton" onClick={this.nextClick.bind(this)} ><i className="next"></i></button>
             </div>
       );
   }

@@ -18,3 +18,37 @@ i {
     transform: rotate(135deg);
     -webkit-transform: rotate(135deg);
 }
+
+select {
+  font-size: 14px;
+  color: #333333;
+}
+
+.prevButton {
+
+}
+
+.nextButton {
+
+}
+
+.labelPage {
+  font-size: 20px;
+}
+
+.labelOf {
+  font-size: 12px;
+}
+
+.labelText {
+  padding-top: 0px;
+  padding-left: 5px;
+  padding-right: 5px;
+  font-size: 10px;
+  color: #333333;
+}
+
+.buttonPagination {
+  margin-left: 10px;
+  width: 20px;
+}
