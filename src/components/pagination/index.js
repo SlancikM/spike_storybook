@@ -3,62 +3,64 @@ import './index.css';
 
 class Pagination extends Component {
 
-
   componentWillMount() {
-    console.log("component should render");
-    const { numPages } = this.props;
-
-    console.log(numPages);
-    console.log(this.selection);
+      console.log("component should render:");
+      const { numPages } = this.props;
+      console.log(this.selection);
   }
 
   componentDidMount() {
-    console.log("component did mount");
-    const { numPages } = this.props;
-
-    console.log(numPages);
-    console.log(this.selection.value);
+      console.log("component did mount:");
+      const { numPages } = this.props;
+      console.log(numPages);
+      console.log(this.selection.value);
   }
 
   renderOptions() {
       const { numPages } = this.props;
       let res = [];
-      for (var k = 1; k <= numPages; k++) {
-          res.push(<option key={k} value={k}> {k} </option>);
+      for (var i = 1; i <= numPages; i++) {
+          res.push(<option key={i} value={i}>{i}</option>);
       }
       return res;
   }
 
   onSelectChange(event) {
-    console.log('this.selection.value: ', this.selection.value);
-    this.selection.value
+      const { paginateFunc } = this.props;
+      paginateFunc(this.selection.value);
   }
 
   prevClick(event) {
-    console.log('PrevClick');
-    // this.selection.value--;
+      const { paginateFunc } = this.props;
+      if(this.selection.value > 1) {
+          this.selection.value--;
+          paginateFunc(this.selection.value);
+      }
   }
 
   nextClick(event) {
-    console.log('NextClick');
-    // this.selection.value++;
+      const { numPages, paginateFunc } = this.props;
+      if(this.selection.value < numPages) {
+          this.selection.value++;
+          paginateFunc(this.selection.value);
+      }
   }
 
   render() {
-    const { numPages, paginateFunc } = this.props;
+      const { numPages, paginateFunc } = this.props;
 
-    return (
-          <div className="paginationLayout" >
-            <span>Page</span>
-            <select ref={(select) => { this.selection = select; }} onChange={this.onSelectChange.bind(this)}>
-              {this.renderOptions()}
-            </select>
-            <span>of</span>
-            <span>{numPages}</span>
-            <button type="prevButton" onClick={this.prevClick} >&laquo;</button>
-            <button type="nextButton" onClick={this.nextClick} >&raquo;</button>
-          </div>
-    );
+      return (
+            <div className="paginationLayout" >
+              <span>Page</span>
+              <select ref={(sel) => { this.selection = sel; }} onChange={this.onSelectChange.bind(this)}>
+                {this.renderOptions()}
+              </select>
+              <span>of</span>
+              <span>{numPages}</span>
+              <button onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
+              <button onClick={this.nextClick.bind(this)} ><i className="next"></i></button>
+            </div>
+      );
   }
 }
 

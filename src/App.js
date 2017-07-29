@@ -15,7 +15,7 @@ class App extends Component {
   }
 
   refreshTable(index) {
-    console.log('REfreshing page ... ', index)
+    console.log('REfreshing table on page: ', index)
   }
 
   render() {
@@ -28,7 +28,7 @@ class App extends Component {
             <div className="App-container">
               <BadassComponent name="anybody" />
               <br />
-              <Pagination numPages="15" paginateFunc={this.refreshTable} />
+              <Pagination numPages={15} paginateFunc={this.refreshTable} />
             </div>
           </div>
         </Provider>
