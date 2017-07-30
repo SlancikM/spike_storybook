@@ -9,6 +9,9 @@ i {
   padding: 3px;
 }
 
+.disabled {
+    background-color: red;
+}
 .next {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);

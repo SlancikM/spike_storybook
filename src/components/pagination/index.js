@@ -1,38 +1,45 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
+import classNames from 'classnames';
 
 class Pagination extends Component {
 
-  renderOptions() {
-      const { numPages } = this.props;
-      let res = [];
-      for (var i = 1; i <= numPages; i++) {
-          res.push(<option key={i} value={i}>{i}</option>);
-      }
-      return res;
-  }
+    renderOptions() {
+        const { numPages } = this.props;
+        let res = [];
+        for (var i = 1; i <= numPages; i++) {
+            res.push(<option key={i} value={i}>{i}</option>);
+        }
+        return res;
+    }
 
-  onChange(event) {
-      const { paginate } = this.props;
-      paginate(this.selection.value);
-  }
+    onChange(event) {
+        const { paginate } = this.props;
+        paginate(this.selection.value);
+    }
 
-  prevClick(event) {
-      const { paginate } = this.props;
-      if(this.selection.value > 1) {
-          this.selection.value--;
-          paginate(this.selection.value);
-      }
-  }
+    prevClick(event) {
+        const { paginate } = this.props;
+        if(this.selection.value > 1) {
+            this.selection.value--;
+            paginate(this.selection.value);
+        }
+    }
 
-  nextClick(event) {
-      const { numPages, paginate } = this.props;
-      if(this.selection.value < numPages) {
+    nextClick(event) {
+        const { numPages, paginate } = this.props;
+        if(this.selection.value < numPages) {
           this.selection.value++;
           paginate(this.selection.value);
-      }
-  }
+        }
+    }
+
+    var errorTypeIconClass = classNames({
+      'typeIcon__error': this.state.isError,
+      'typeIcon__info': this.state.isInfo,
+    });
+
 
     render() {
         const { numPages } = this.props;
@@ -45,7 +52,7 @@ class Pagination extends Component {
                   </select>
                   <span className="labelOf" >of</span>
                   <span className="labelNumPages">{numPages}</span>
-                  <button className="prevButton" onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
+                  <button className=`prevButton disabled` onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
                   <button className="nextButton" onClick={this.nextClick.bind(this)} ><i className="next"></i></button>
               </div>
         );
