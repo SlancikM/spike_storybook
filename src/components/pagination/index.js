@@ -15,41 +15,39 @@ class Pagination extends Component {
         const { numPages } = this.props;
         let res = [];
         for (var i = 1; i <= numPages; i++) {
-            res.push(<option key={i} value={i}>{i}</option>);
+            res.push(<option key={i} onClick={console.log('onClick')} value={i}>{i}</option>);
         }
         return res;
     }
 
     onChange(event) {
+        console.log('onChange... ', this.selection.value);
         const { paginate } = this.props;
-        this.state.selectedValue = this.selection.value;
-        paginate(this.state.selectedValue);
+        // this.setState({ selectedValue: this.selection.value });
+        // this.forceUpdate();
+        this.setState({selectedValue: event.target.value});
+        paginate(this.selection.value);
     }
 
     prevClick(event) {
         const { paginate } = this.props;
         if(this.state.selectedValue > 1) {
-            this.state.selectedValue--;
-            this.selection.value = this.state.selectedValue;
-            paginate(this.state.selectedValue);
+            console.log('prevClick: ', this.state.selectedValue);
+            this.setState({ selectedValue: this.state.selectedValue - 1 });
+            // this.selection.value = this.state.selectedValue;
+            paginate(this.selection.value);
         }
     }
 
     nextClick(event) {
         const { numPages, paginate } = this.props;
         if(this.state.selectedValue < numPages) {
-          this.state.selectedValue++;
-          this.selection.value = this.state.selectedValue;
-          paginate(this.state.selectedValue);
+          console.log('nextClick: ', this.state.selectedValue);
+          this.setState({ selectedValue: this.state.selectedValue + 1 });
+          // this.selection.value = this.state.selectedValue;
+          paginate(this.selection.value);
         }
     }
-
-    // var errorTypeIconClass = classNames({
-    //   'typeIcon__error': this.state.isError,
-    //   'typeIcon__info': this.state.isInfo,
-    // });
-
-    // (this.state.selectedValue === 1)
 
     render() {
         const { numPages } = this.props;
@@ -57,13 +55,13 @@ class Pagination extends Component {
         return (
               <div className="paginationLayout" >
                   <span className="labelPage" >Page</span>
-                  <select className="select" ref={(sel) => { this.selection = sel; }} onChange={this.onChange.bind(this)}>
+                  <select className="select" ref={(sel) => { this.selection = sel; }} value={this.state.selectedValue}  onChange={this.onChange.bind(this)}>
                       {this.renderOptions()}
                   </select>
                   <span className="labelOf" >of</span>
                   <span className="labelNumPages">{numPages}</span>
-                  <button className={`prevButton`} disabled={false}  onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
-                  <button className="nextButton" onClick={this.nextClick.bind(this)} ><i className="next"></i></button>
+                  <button className={`prevButton`} disabled={(this.state.selectedValue === 1)}  onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
+                  <button className="nextButton" disabled={(this.state.selectedValue === this.props.numPages)} onClick={this.nextClick.bind(this)} ><i className="next"></i></button>
               </div>
         );
     }
