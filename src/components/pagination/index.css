@@ -9,9 +9,7 @@ i {
   padding: 3px;
 }
 
-.disabled {
-    background-color: red;
-}
+
 .next {
     transform: rotate(-45deg);
     -webkit-transform: rotate(-45deg);
@@ -23,35 +21,39 @@ i {
 }
 
 select {
-  font-size: 14px;
+  font-size: 12px;
+  width: 40px;
+  height: 24px;
   color: #333333;
 }
 
 .prevButton {
-
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
 }
 
 .nextButton {
-
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    padding-left: 2px;
 }
 
 .labelPage {
-  font-size: 20px;
+  font-size: 12px;
+  padding-right: 4px;
 }
 
 .labelOf {
   font-size: 12px;
+  padding-left: 4px;
 }
 
-.labelText {
+.labelNumPages {
   padding-top: 0px;
-  padding-left: 5px;
-  padding-right: 5px;
-  font-size: 10px;
+  padding-left: 4px;
+  padding-right: 20px;
+  font-size: 12px;
   color: #333333;
-}
-
-.buttonPagination {
-  margin-left: 10px;
-  width: 20px;
 }

@@ -15,7 +15,7 @@ class Pagination extends Component {
         const { numPages } = this.props;
         let res = [];
         for (var i = 1; i <= numPages; i++) {
-            res.push(<option key={i} onClick={console.log('onClick')} value={i}>{i}</option>);
+            res.push(<option key={i} value={i}>{i}</option>);
         }
         return res;
     }
@@ -23,9 +23,8 @@ class Pagination extends Component {
     onChange(event) {
         console.log('onChange... ', this.selection.value);
         const { paginate } = this.props;
-        // this.setState({ selectedValue: this.selection.value });
-        // this.forceUpdate();
         this.setState({selectedValue: event.target.value});
+        this.forceUpdate();
         paginate(this.selection.value);
     }
 
@@ -34,7 +33,6 @@ class Pagination extends Component {
         if(this.state.selectedValue > 1) {
             console.log('prevClick: ', this.state.selectedValue);
             this.setState({ selectedValue: this.state.selectedValue - 1 });
-            // this.selection.value = this.state.selectedValue;
             paginate(this.selection.value);
         }
     }
@@ -44,7 +42,6 @@ class Pagination extends Component {
         if(this.state.selectedValue < numPages) {
           console.log('nextClick: ', this.state.selectedValue);
           this.setState({ selectedValue: this.state.selectedValue + 1 });
-          // this.selection.value = this.state.selectedValue;
           paginate(this.selection.value);
         }
     }
@@ -60,7 +57,7 @@ class Pagination extends Component {
                   </select>
                   <span className="labelOf" >of</span>
                   <span className="labelNumPages">{numPages}</span>
-                  <button className={`prevButton`} disabled={(this.state.selectedValue === 1)}  onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
+                  <button className="prevButton" disabled={(this.state.selectedValue === 1)}  onClick={this.prevClick.bind(this)} ><i className="prev"></i></button>
                   <button className="nextButton" disabled={(this.state.selectedValue === this.props.numPages)} onClick={this.nextClick.bind(this)} ><i className="next"></i></button>
               </div>
         );
