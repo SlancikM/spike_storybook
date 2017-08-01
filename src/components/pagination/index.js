@@ -25,7 +25,9 @@ class Pagination extends Component {
         const { paginate } = this.props;
         this.setState({selectedValue: event.target.value});
         this.forceUpdate();
-        paginate(this.selection.value);
+        //paginate(this.selection.value);
+
+        // this.dispach()
     }
 
     prevClick(event) {
@@ -33,7 +35,7 @@ class Pagination extends Component {
         if(this.state.selectedValue > 1) {
             console.log('prevClick: ', this.state.selectedValue);
             this.setState({ selectedValue: this.state.selectedValue - 1 });
-            paginate(this.selection.value);
+            //paginate(this.selection.value);
         }
     }
 
@@ -42,7 +44,7 @@ class Pagination extends Component {
         if(this.state.selectedValue < numPages) {
           console.log('nextClick: ', this.state.selectedValue);
           this.setState({ selectedValue: this.state.selectedValue + 1 });
-          paginate(this.selection.value);
+          // paginate(this.selection.value);
         }
     }
 
@@ -65,6 +67,7 @@ class Pagination extends Component {
 }
 
 Pagination.propTypes = {
+
     numPages: PropTypes.number.isRequired,
     paginate: PropTypes.func.isRequired
 };
